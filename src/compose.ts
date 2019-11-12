@@ -1,5 +1,3 @@
-import { id } from './generic';
-
 /**
  * Composes two functions together
  *
@@ -103,5 +101,5 @@ export function compose<T, U, V, X, Y extends any[]>(
  * if you want more functions composed - add a typed overload yourself
  */
 export function compose(...fns: Function[]) {
-  return (...x: any[]) => fns.reduceRight((arg, fn) => [(fn || id)(...arg)], x)[0];
+  return (...x: any[]) => fns.reduceRight((arg, fn) => [(fn || ((_: any) => _))(...arg)], x)[0];
 }
