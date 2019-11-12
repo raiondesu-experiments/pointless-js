@@ -3,7 +3,7 @@
 </h1>
 
 <p align="center">
-Functional point-free utilities for js
+Functional tree-shakeable point-free utilities for js
 </p>
 
 <h2 align="center">
@@ -29,7 +29,7 @@ Functional point-free utilities for js
 
 ## What is this?
 
-It's a simple collection of functional utilities for JavaScript and Typescript standard library.
+It's a simple, tree-shakeable collection of functional utilities for JavaScript and Typescript standard library.
 
 If you need similar utilities for [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) - check out [pointless-fetch](https://github.com/raiondesu-experiments/pointless-fetch).
 

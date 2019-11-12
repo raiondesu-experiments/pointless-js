@@ -2,7 +2,7 @@
   "name": "pointless-js",
   "version": "0.0.0",
   "sideEffects": false,
-  "description": "Functional point-free utilities for js",
+  "description": "Functional, tree-shakeable point-free utilities for js",
   "main": "dist/js",
   "module": "dist/es",
   "unpkg": "dist/es",
