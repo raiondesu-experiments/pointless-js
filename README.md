@@ -46,12 +46,12 @@ npm i -S pointless-js
 ```html
 <!-- ES2015 -->
 <script type="module">
-  import * as pointless from 'https://unpkg.com/pointless-js';
+  import * as P from 'https://unpkg.com/pointless-js';
 
   // use it here
 </script>
 
-<!-- ES5 with IE11+ general syntax polyfills, global object - `pointless` -->
+<!-- ES5 with IE11+ general syntax polyfills, global object - `P` -->
 <!-- Polyfill `window.Promise` and `Object.assign` yourself! -->
 <script src="https://unpkg.com/pointless-js/dist/umd.js"></script>
 ```
@@ -61,19 +61,19 @@ npm i -S pointless-js
 ```ts
 // TS-module (pure typescript),
 // allows compilation settings to be set from the project config
-import * as pointless from 'pointless-js/src';
+import * as P from 'pointless-js/src';
 
 // ES-module (npm/node, typescript)
-import * as pointless from 'pointless-js';
+import * as P from 'pointless-js';
 
 // ESNext (no polyfills for esnext)
-import * as pointless from 'pointless-js/dist/esnext';
+import * as P from 'pointless-js/dist/esnext';
 
 // ES-module (browser, node)
-import * as pointless from 'https://unpkg.com/pointless-js';
+import * as P from 'https://unpkg.com/pointless-js';
 
 // Classic node commonjs
-const pointless = require('pointless-js/dist/js');
+const P = require('pointless-js/dist/js');
 ```
 
 
