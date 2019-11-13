@@ -43,7 +43,10 @@ export function reduce<T>(f: (p: T, c: T, i: number, arr: Readonly<T[]>) => T): 
  * @param init - A callback for the reduce function.
  * @returns A function that reduces an array using the remembered callback.
  */
-export function reduce<U, T>(f: (p: U, c: T, i: number, arr: Readonly<T[]>) => U, init?: U | undefined): (arr: Readonly<Nullable<T[]>>) => U;
+export function reduce<T, R = T>(
+  f: (p: R, c: T, i: number, arr: Readonly<T[]>) => R,
+  init: R
+): (arr: Readonly<Nullable<T[]>>) => R;
 
 /**
  * Lazy version of Array.prototype.reduce()
@@ -56,12 +59,13 @@ export function reduce<U, T>(f: (p: U, c: T, i: number, arr: Readonly<T[]>) => U
  * @param [init] - [optional] A callback for the reduce function.
  * @returns A function that reduces an array using the remembered callback.
  */
-export function reduce<U, T>(f: (p: U, c: T, i: number, arr: Readonly<T[]>) => U, init: U): (arr: Readonly<Nullable<T[]>>) => U;
+export function reduce<T, R>(f: (p: R, c: T, i: number, arr: Readonly<T[]>) => R, init?: R): (arr: Readonly<Nullable<T[]>>) => R;
 
-export function reduce<U, T = U>(f: (p: U, c: T, i: number, arr: Readonly<T[]>) => U, init?: U): (arr: Readonly<Nullable<T[]>>) => U | T {
-  return typeof init !== 'undefined'
-    ? safeArr<T[], U>(_ => _.reduce(f, init))
-    : safeArr<T[], T>(_ => _.reduce(f as any));
+export function reduce<T, R>(
+  f: (p: R | T, c: T, i: number, arr: Readonly<T[]>) => R,
+  init?: R | T
+): (arr: Readonly<Nullable<T[]>>) => R | T {
+  return safeArr<T[], R | T>(_ => _.reduce(f, init as R | T));
 }
 
 /**
@@ -269,7 +273,7 @@ export function action<R>(act: (a: R, b: R) => R, init?: R): ReduceAction<R> {
         ? safeObj((_: T) => _[arrOrProp])
         : id;
 
-    return reduce<R, T>((a, b) => act(a, getProp(b)), init);
+    return reduce<T, R>((a, b) => act(a, getProp(b)), init);
   } as ReduceAction<R>;
 }
 
