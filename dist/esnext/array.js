@@ -7,9 +7,7 @@ export function map(f) {
     return safeArr(_ => _.map(f));
 }
 export function reduce(f, init) {
-    return typeof init !== 'undefined'
-        ? safeArr(_ => _.reduce(f, init))
-        : safeArr(_ => _.reduce(f));
+    return safeArr(_ => _.reduce(f, init));
 }
 export function reduceRight(f, init) {
     return safeArr(_ => _.reduceRight(f, init));
