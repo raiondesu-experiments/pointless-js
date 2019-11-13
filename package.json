@@ -1,6 +1,6 @@
 {
   "name": "pointless-js",
-  "version": "0.0.0",
+  "version": "0.0.1-rc.0",
   "sideEffects": false,
   "description": "Functional, tree-shakeable point-free utilities for js",
   "main": "dist/js",
