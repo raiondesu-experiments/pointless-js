@@ -16,7 +16,7 @@ export const safeArr = createSafeOperation<Array<any>>([]);
  * @param f - A callback for the map function.
  * @returns A function that maps an array into a different array using the remembered callback.
  */
-export function map<T, R>(f: (x: T) => R) {
+export function map<T, R>(f: (x: T, i: number, arr: Readonly<T[]>) => R) {
   return safeArr<T[], R[]>(_ => _.map<R>(f));
 }
 
@@ -181,7 +181,7 @@ export function slice<T>(start?: number, end?: number) {
  * @param f - A callback for the `some()` function, should return a boolean.
  * @returns A function that checks the array using the remembered callback.
  */
-export function some<T>(f: (x: T) => boolean) {
+export function some<T>(f: (x: T, i: number, array: readonly T[]) => boolean) {
   return safeArr<T[], boolean>(_ => _.some(f));
 }
 
@@ -196,7 +196,7 @@ export function some<T>(f: (x: T) => boolean) {
  * @param f - A callback for the `every()` function, should return a boolean.
  * @returns A function that checks the array using the remembered callback.
  */
-export function every<T>(f: (x: T) => boolean) {
+export function every<T>(f: (x: T, i: number, array: readonly T[]) => boolean) {
   return safeArr<T[], boolean>(_ => _.every(f));
 }
 
