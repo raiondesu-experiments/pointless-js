@@ -29,7 +29,7 @@ Functional tree-shakeable point-free utilities for js
 
 ## What is this?
 
-It's a simple, tree-shakeable collection of functional utilities for JavaScript and Typescript standard library.
+It's a simple, typed and tree-shakeable collection of functional utilities for the JavaScript standard library.
 
 If you need similar utilities for [`fetch`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/fetch) - check out [pointless-fetch](https://github.com/raiondesu-experiments/pointless-fetch).
 
