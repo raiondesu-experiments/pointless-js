@@ -313,16 +313,18 @@ export const sum: {
 } = action<number>(add, 0);
 
 /**
- * Check unique for item and return boolean
- * @param equals comparing function for filter
+ * Checks the uniqeness of an array item based on a comparator function
+ *
+ * @param equals a function that determines if two elements are equal
  */
 export const isElementUnique = <T>(
   equals: Comparator<T> = (a, b) => a === b
 ) => (el: T, i: number, arr: readonly T[]) => arr.findIndex(newEl => equals(newEl, el)) === i;
 
 /**
- * Remove duplicates and return unique array
- * @param equals comparing function for filter
+ * Removes duplicates from an array based on the result of an `equals` function
+ *
+ * @param equals a function that determines if two elements are equal
  */
 export const unique = <T>(equals: Comparator<T> = (a, b) => a === b) => filter<T>(
   isElementUnique<T>(equals)
