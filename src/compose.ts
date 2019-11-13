@@ -1,6 +1,8 @@
 /**
  * Composes two functions together
  *
+ * Will probably be redundant after the pipe operator gets merged
+ *
  * ```ts
 declare const price: number; // from server...
 
@@ -25,6 +27,8 @@ export function compose<T extends any[], U, V>(
 
 /**
  * Composes three functions together
+ *
+ * Will probably be redundant after the pipe operator gets merged
  *
  * ```ts
 declare const prices: number[]; // from server...
@@ -52,6 +56,8 @@ export function compose<T, U, V, X extends any[]>(
 
 /**
  * Composes four functions together
+ *
+ * Will probably be redundant after the pipe operator gets merged
  *
  * ```ts
  * declare const prices: { price: number }[]; // from server...
