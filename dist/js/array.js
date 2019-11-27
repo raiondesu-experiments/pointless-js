@@ -10,9 +10,7 @@ function map(f) {
 }
 exports.map = map;
 function reduce(f, init) {
-    return typeof init !== 'undefined'
-        ? exports.safeArr(_ => _.reduce(f, init))
-        : exports.safeArr(_ => _.reduce(f));
+    return exports.safeArr(_ => _.reduce(f, init));
 }
 exports.reduce = reduce;
 function reduceRight(f, init) {

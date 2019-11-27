@@ -1,4 +1,4 @@
-import { createSafeOperation } from "./generic.js";
+import { createSafeOperation } from "./safe.js";
 export const safeStr = createSafeOperation('');
 function lazyStrMethod(methodName) {
     const method = String.prototype[methodName];
@@ -18,4 +18,5 @@ export const trim = lazyStrMethod('trim')();
 export const startsWith = lazyStrMethod('startsWith');
 export const endsWith = lazyStrMethod('endsWith');
 export const getDigits = replace(/[^0-9]/g, '');
+export { concat, includes } from "./generic.js";
 //# sourceMappingURL=string.js.map
