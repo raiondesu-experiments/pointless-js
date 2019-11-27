@@ -8,7 +8,6 @@ export * from './replace';
 export * from './search';
 export * from './split';
 export * from './substr';
-export * from './test';
 export * from './trim';
 
 export { concat, includes } from '../generic';
