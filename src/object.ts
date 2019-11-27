@@ -1,5 +1,5 @@
 import { compose } from './compose';
-import { createSafeOperation } from './generic';
+import { createSafeOperation } from './safe';
 import { Nullable } from './type';
 
 /**
@@ -26,7 +26,7 @@ export const mapObject = <T extends object, R>(
 /**
  * Gets the array of keys of the given object (type-safe)
  */
-export const keys = Object.keys.bind(Object) as <T extends object>(o: T) => Array<keyof T>;
+export const keys = Object.keys as <T extends object>(o: T) => Array<keyof T>;
 
 /**
  * Lazily gets a value by key chain from the object.

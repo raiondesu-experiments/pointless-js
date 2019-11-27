@@ -1,4 +1,4 @@
-import { createSafeOperation } from './generic';
+import { createSafeOperation } from './safe';
 import { GetFKeys, GetF } from './type';
 
 export const safeStr = createSafeOperation<string>('');
@@ -81,3 +81,5 @@ export const startsWith = lazyStrMethod('startsWith');
 export const endsWith = lazyStrMethod('endsWith');
 
 export const getDigits = replace(/[^0-9]/g, '');
+
+export { concat, includes } from './generic';

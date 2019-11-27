@@ -4,11 +4,11 @@
  * @param operator a function that takes two boolean and returns another boolean
  * @returns a composer of boolean-returning operations
  */
-export function composeBools(operator: (left: boolean, right: boolean) => boolean) {
-  return function <T>(...fns: Array<(x: T, i: number, arr: readonly T[]) => boolean>) {
-    return fns.reduce((lf, rf) => (x: T, i, arr) => operator(lf(x, i, arr), rf(x, i + 1, arr)));
-  };
-}
+export const composeBools = (
+  operator: (left: boolean, right: boolean) => boolean
+) => <T>(
+  ...fns: Array<(x: T, i: number, arr: readonly T[]) => boolean>
+) => fns.reduce((lf, rf) => (x: T, i, arr) => operator(lf(x, i, arr), rf(x, i + 1, arr)));
 
 /**
  * Composes boolean-returning operations together using "and" operation
